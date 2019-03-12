@@ -62,3 +62,9 @@ GET http://localhost:3000/1
 // Any number outside 1-4 returns 404
 GET http://localhost:3000/5
 ```
+
+```json
+{
+ "message":"Item not found."
+}
+```
