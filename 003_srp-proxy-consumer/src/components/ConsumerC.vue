@@ -15,14 +15,14 @@ li {
 </style>
 
 <script>
-import UsersProxy from "../proxies/users-proxy.js";
+import LoadAllUsersProxy from "../proxies/users/load-all.js";
 
 export default {
   name: "ConsumerC",
   async mounted() {
-    let proxy = new UsersProxy();
+    let loadAllUsersProxy = new LoadAllUsersProxy();
 
-    this.users = await proxy.loadAllUsers();
+    this.users = await loadAllUsersProxy.execute();
   },
   props: {
     msg: String
