@@ -1,0 +1,19 @@
+{
+  "name": "004_testability",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bad-test.js",
+  "scripts": {
+    "test": "mocha",
+    "bad-test": "mocha -g 'Bad Test'",
+    "good-test": "mocha -g 'Good Test'"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "chai": "^4.2.0",
+    "mocha": "^6.0.2",
+    "mock-require": "^3.0.3"
+  }
+}
