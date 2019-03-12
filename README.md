@@ -2,7 +2,7 @@
 This repository is a POC of JavaScript proxy design pattern. It showcases the advantages of encapsulating API calls inside proxies so that API calls could be re-used between different components and how could they be mocked to make your code testable.
 
 
-## Endpoint as Subject
+## Endpoints
 
 The following endpoint(s) are used for testing API consumptions using API proxies.
 
@@ -39,4 +39,14 @@ The following endpoint(s) are used for testing API consumptions using API proxie
     ]
   });
 }
+```
+
+### Get by ID
+
+```
+// Any number 1-4 would return 200
+GET http://localhost:3000/1
+
+// Any number outside 1-4 returns 404
+GET http://localhost:3000/5
 ```
