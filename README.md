@@ -41,12 +41,24 @@ The following endpoint(s) are used for testing API consumptions using API proxie
 }
 ```
 
-### Get by ID
+### Positive Get by ID (200)
 
 ```
 // Any number 1-4 would return 200
 GET http://localhost:3000/1
+```
+```json
+{
+ "user": {
+   "id":2,
+   "first_name":"Pogs",
+   "last_name":"Chua"
+ }
+}
+```
 
+### Negative Get By ID 404
+```
 // Any number outside 1-4 returns 404
 GET http://localhost:3000/5
 ```
