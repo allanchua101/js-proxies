@@ -1,5 +1,11 @@
-# JS Proxy Design Pattern
-This repository is a POC of JavaScript proxy design pattern. It showcases the advantages of encapsulating API calls inside proxies so that API calls could be re-used between different components and how could they be mocked to make your code testable.
+# JS API Proxy Design Pattern
+This repository is a POC of JavaScript API proxy design patterns. 
+
+## Advantages of encapsulating API calls
+
+- Abstracts consumers from technology used to retrieve data from APIs.
+- Allows re-usability of API calls across different consumers.
+- Allows mocking of API layers in unit testing.
 
 ## Booting up
 
