@@ -7,7 +7,7 @@ This repository is a POC of JavaScript API proxy design patterns.
 - Allows re-usability of API calls across different consumers.
 - Allows mocking of API layers in unit testing.
 
-## Sample Proxy via ES6 Class
+## API Proxy via ES6 Class
 
 ```js
 import axios from "axios";
@@ -37,26 +37,40 @@ export default class UsersProxy {
       return [];
     }
   }
+}
+```
+
+## API Proxy via Common JS
+
+```js
+const axios = require("axios");
+
+/**
+ * @class loadAllUsersProxy
+ * @description Proxy used for communicating with get all users endpoints.
+ * @author Allan A. Chua
+ * @version 1.0
+ * @since March 12, 2019
+ */
+module.exports = {
   /**
    * @async
-   * @function getByID
-   * @description Method used for pulling user by ID.
+   * @function loadAllUsers
+   * @description Method used for pulling all user records.
    *
-   * @param {number} id ID of user to retrieve.
-   *
-   * @returns {Promise<User>} Promise representing target user.
+   * @returns {Promise<User[]>} Promise representing a set of users.
    */
-  async getByID(id) {
+  async loadAllUsers() {
     try {
-      let { data } = await axios.get(`http://localhost:3000/users/${id}`);
+      let { data } = await axios.get("http://localhost:3000/users");
 
-      return data.user;
+      return data.users;
     } catch (error) {
       // TODO: Implement proper logging here.
       return [];
     }
   }
-}
+};
 ```
 
 ## Booting up
